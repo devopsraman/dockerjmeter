@@ -4,7 +4,7 @@ pipeline {
 	      stage ('Run jmeter scripts on docker') {
 	         
 			  steps {
-				  sh ' /usr/local/bin/docker rmi lazzurs/jmeter 
+				  sh ' /usr/local/bin/docker rmi lazzurs/jmeter ' 
 				  
 				  sh ' /usr/local/bin/docker pull lazzurs/jmeter '
 				  //sh '/usr/local/bin/docker ps'
