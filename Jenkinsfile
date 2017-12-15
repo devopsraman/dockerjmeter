@@ -17,14 +17,22 @@ pipeline {
 				  //sh '/usr/lcaol/bin/rm -rf /tmp/*.jtl'
 				  sh '/usr/local/bin/docker exec -i master /bin/bash -c "jmeter -n -t /tmp/MVP1.0MaxLTV.v2.jmx -l /tmp/jmeter15.jtl" '
 				  
-				  perfReport compareBuildPrevious: true, excludeResponseTime: true, modePerformancePerTestCase: true, modeThroughput: true, sourceDataFiles: '/tmp/*.jtl'
-				  sh ' rm -rf /tmp/*.jtl'  
-				  sh '/usr/local/bin/docker stop master '
-				    sh '/usr/local/bin/docker rm master'
+				  //perfReport compareBuildPrevious: true, excludeResponseTime: true, modePerformancePerTestCase: true, modeThroughput: true, sourceDataFiles: '/tmp/*.jtl'
+				  //sh ' rm -rf /tmp/*.jtl'  
+				  //sh '/usr/local/bin/docker stop master '
+				    //sh '/usr/local/bin/docker rm master'
                                   
 			  }
 		}
-		   
+		
+		 stage('publish Jmeter Report'){
+			 steps {
+			   perfReport compareBuildPrevious: true, excludeResponseTime: true, modePerformancePerTestCase: true, modeThroughput: true, sourceDataFiles: '/tmp/*.jtl'
+				  sh ' rm -rf /tmp/*.jtl'  
+				  sh '/usr/local/bin/docker stop master '
+				    sh '/usr/local/bin/docker rm master'
+			 }
+		 }
 		   
 	 }
 		   
