@@ -35,7 +35,7 @@ pipeline {
 				  
 				     //sh'rm -rf /tmp/*.jtl' 
 				      sh' /usr/local/bin/docker stop master' 
-				     // sh '/usr/local/bin/docker rm master'
+				      sh '/usr/local/bin/docker rm master'
 				  
 			 }
 		 }
