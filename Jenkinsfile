@@ -33,7 +33,7 @@ pipeline {
 			 steps {
 			   perfReport compareBuildPrevious: true, excludeResponseTime: true, modePerformancePerTestCase: true, modeThroughput: true, sourceDataFiles: '/tmp/*.jtl'
 				  
-				     sh'rm -rf /tmp/*.jtl' 
+				     //sh'rm -rf /tmp/*.jtl' 
 				      //sh' /usr/local/bin/docker stop master' 
 				     // sh '/usr/local/bin/docker rm master'
 				  
