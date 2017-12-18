@@ -25,7 +25,7 @@ pipeline {
 				  //sh '/usr/local/bin/docker stop master '
 				    //sh '/usr/local/bin/docker rm master'
 				    
-                                   archiveArtifacts '/tmp/**'
+                                   archiveArtifacts '/tmp/*.jtl'
 			  }
 		}
 		
