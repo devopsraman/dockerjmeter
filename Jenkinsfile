@@ -5,7 +5,7 @@ pipeline {
 	         
 			  steps {
 				  sh '''
-				      // /usr/local/bin/docker rmi lazzurs/jmeter
+				     
 				      /usr/local/bin/docker pull lazzurs/jmeter
 				      /usr/local/bin/docker run -dit -v /tmp:/tmp -p 8080:8080 --name master  lazzurs/jmeter  /bin/bash
 				      /usr/local/bin/jmeter --version
