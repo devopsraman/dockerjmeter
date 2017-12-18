@@ -5,11 +5,11 @@ pipeline {
 	         
 			  steps {
 				  sh '''
-				      docker rmi lazzurs/jmeter
-				      docker pull lazzurs/jmeter
-				      docker run -dit -v /tmp:/tmp -p 8080:8080 --name master  lazzurs/jmeter  /bin/bash
+				      /usr/local/bin/docker rmi lazzurs/jmeter
+				      //docker pull lazzurs/jmeter
+				      //docker run -dit -v /tmp:/tmp -p 8080:8080 --name master  lazzurs/jmeter  /bin/bash
 				      jmeter --version
-				      docker exec -i master /bin/bash -c "jmeter -n -t /tmp/MVP1.0MaxLTV.v2.jmx -l /tmp/jmeter15.jtl
+				      //docker exec -i master /bin/bash -c "jmeter -n -t /tmp/MVP1.0MaxLTV.v2.jmx -l /tmp/jmeter15.jtl
 				   '''
 				  //sh ' /usr/local/bin/docker rmi lazzurs/jmeter ' 
 				     
