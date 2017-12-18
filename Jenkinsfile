@@ -37,11 +37,11 @@ pipeline {
 		 stage('publish Jmeter Report'){
 			 steps {
 			   perfReport compareBuildPrevious: true, excludeResponseTime: true, modePerformancePerTestCase: true, modeThroughput: true, sourceDataFiles: '/tmp/*.jtl'
-				 sh ''' 
-				       rm -rf /tmp/*.jtl 
-				       /usr/local/bin/docker stop master 
-				       /usr/local/bin/docker rm master
-				  '''
+				  
+				     sh'rm -rf /tmp/*.jtl' 
+				      sh' /usr/local/bin/docker stop master' 
+				      sh '/usr/local/bin/docker rm master'
+				  
 			 }
 		 }
 		   
