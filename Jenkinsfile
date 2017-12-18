@@ -17,7 +17,7 @@ pipeline {
 				  sh '/usr/local/bin/docker run -dit -v /tmp:/tmp -p 8080:8080 --name master  lazzurs/jmeter  /bin/bash '
 				  sh '/usr/local/bin/jmeter --version'
 				  //sh '/usr/lcaol/bin/rm -rf /tmp/*.jtl'
-				  sh '/usr/local/bin/docker exec -i master /bin/bash -c "jmeter -n -t /tmp/MVP1.0MaxLTV.v2.jmx -l /tmp/jmeter15.jtl" '
+				  sh '/usr/local/bin/docker exec -i master /bin/bash -c "jmeter -n -t /tmp/MVP1.0MaxLTV.v2.jmx -l /tmp/jmeter16.jtl" '
 				    
 				  //perfReport compareBuildPrevious: true, excludeResponseTime: true, modePerformancePerTestCase: true, modeThroughput: true, sourceDataFiles: '/tmp/*.jtl'
 				  //sh ' rm -rf /tmp/*.jtl'  
